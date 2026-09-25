@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08000f">
+
+    <title>✨ A Special Birthday Surprise</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+
+        <div id="stars"></div>
+
+        <div class="noise"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MUSIC
+    ====================================================== -->
+
+    <audio id="birthdayMusic"
+           src="assets/birthday.mp3"
+           loop>
+    </audio>
+
+    <button id="musicButton"
+            class="music-button"
+            aria-label="Music">
+
+        ♪
+
+    </button>
+
+
+    <!-- =====================================================
+         PROGRESS
+    ====================================================== -->
+
+    <div class="progress-container">
+
+        <div id="progressBar"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN WEBSITE
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             SCREEN 1
+        ================================================== -->
+
+        <section class="screen active" id="screen1">
+
+            <div class="screen-content">
+
+                <div class="small-label">
+                    A LITTLE SURPRISE FOR YOU
+                </div>
+
+                <h1 class="hero-title">
+
+                    Hey,
+                    <span class="gradient-text">Beautiful</span>.
+
+                </h1>
+
+                <p class="hero-description">
+
+                    I made something special for you.
+                    But before we begin...
+
+                </p>
+
+                <button class="main-button"
+                        onclick="nextScreen()">
+
+                    <span>Open Your Surprise</span>
+
+                    <span class="button-arrow">→</span>
+
+                </button>
+
+                <div class="scroll-hint">
+
+                    <span>tap to begin</span>
+
+                    <div class="scroll-line"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 2
+        ================================================== -->
+
+        <section class="screen" id="screen2">
+
+            <div class="screen-content">
+
+                <div class="emoji-big">
+                    🎁
+                </div>
+
+                <div class="small-label">
+                    STEP 01
+                </div>
+
+                <h2>
+                    Are you ready
+                    <span class="pink-text">for this?</span>
+                </h2>
+
+                <p>
+                    There may be a few surprises waiting
+                    for you ahead.
+                </p>
+
+                <div class="choice-buttons">
+
+                    <button class="yes-button"
+                            onclick="nextScreen()">
+
+                        YES ❤️
+
+                    </button>
+
+                    <button class="no-button"
+                            id="noButton">
+
+                        Not yet 😏
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 3
+        ================================================== -->
+
+        <section class="screen" id="screen3">
+
+            <div class="screen-content">
+
+                <div class="small-label">
+                    STEP 02
+                </div>
+
+                <div class="emoji-big">
+                    ✨
+                </div>
+
+                <h2>
+
+                    Today isn't
+                    <span class="gradient-text">
+                        just another day.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Because today is the day
+                    someone very special was born.
+
+                </p>
+
+                <button class="main-button"
+                        onclick="nextScreen()">
+
+                    <span>Continue</span>
+
+                    <span class="button-arrow">→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 4 : BALLOONS
+        ================================================== -->
+
+        <section class="screen balloon-screen"
+                 id="screen4">
+
+            <div id="balloonContainer"></div>
+
+            <div class="screen-content balloon-content">
+
+                <div class="small-label">
+                    STEP 03
+                </div>
+
+                <h2>
+                    Let the colors
+                    <span class="pink-text">
+                        fly!
+                    </span>
+                </h2>
+
+                <p>
+                    Make a wish and let the balloons
+                    carry it to the sky.
+                </p>
+
+                <button class="main-button"
+                        onclick="launchBalloons()">
+
+                    🎈 Fly the Balloons
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 5 : BIRTHDAY
+        ================================================== -->
+
+        <section class="screen"
+                 id="screen5">
+
+            <div class="screen-content birthday-content">
+
+                <div class="cake">
+
+                    <div class="flame"></div>
+
+                    <div class="candle"></div>
+
+                    <div class="cake-top"></div>
+
+                    <div class="cake-body">
+
+                        <div class="icing"></div>
+
+                        <div class="cake-dots">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="small-label">
+                    THE SPECIAL DAY
+                </div>
+
+                <h1>
+
+                    Happy Birthday
+                    <span class="gradient-text">
+                        Bangaram!
+                    </span>
+
+                </h1>
+
+                <p id="birthdayTyping">
+                </p>
+
+                <button class="main-button"
+                        onclick="nextScreen()">
+
+                    See Your Memories ❤️
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 6 : MEMORIES
+        ================================================== -->
+
+        <section class="screen gallery-screen"
+                 id="screen6">
+
+            <div class="gallery-wrapper">
+
+                <div class="small-label">
+                    LITTLE MEMORIES
+                </div>
+
+                <h2>
+                    Moments worth
+                    <span class="gradient-text">
+                        remembering.
+                    </span>
+                </h2>
+
+                <p class="gallery-subtitle">
+
+                    Some moments become memories
+                    without us even realizing it.
+
+                </p>
+
+
+                <div class="gallery">
+
+                    <div class="photo-card photo-one">
+
+                        <img src="assets/photo1.jpg"
+                             alt="Memory 1">
+
+                        <div class="photo-number">
+                            01
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-card photo-two">
+
+                        <img src="assets/photo2.jpg"
+                             alt="Memory 2">
+
+                        <div class="photo-number">
+                            02
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-card photo-three">
+
+                        <img src="assets/photo3.jpg"
+                             alt="Memory 3">
+
+                        <div class="photo-number">
+                            03
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-card photo-four">
+
+                        <img src="assets/photo4.jpg"
+                             alt="Memory 4">
+
+                        <div class="photo-number">
+                            04
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="main-button"
+                        onclick="nextScreen()">
+
+                    One Last Surprise ✨
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 7 : LETTER
+        ================================================== -->
+
+        <section class="screen letter-screen"
+                 id="screen7">
+
+            <div class="letter">
+
+                <div class="letter-top">
+
+                    <span>For You</span>
+
+                    <span>❤️</span>
+
+                </div>
+
+
+                <div class="letter-content">
+
+                    <div class="small-label">
+                        A FEW WORDS
+                    </div>
+
+                    <h2>
+                        Dear
+                        <span class="gradient-text">
+                            Bangaram
+                        </span>,
+                    </h2>
+
+                    <p>
+                        On your special day, I just want
+                        you to remember how amazing you are.
+                    </p>
+
+                    <p>
+                        May this new year of your life
+                        bring you beautiful memories,
+                        genuine happiness, peace,
+                        success and everything your heart
+                        wishes for.
+                    </p>
+
+                    <p>
+                        Keep smiling.
+                        Keep dreaming.
+                        And never stop being yourself.
+                    </p>
+
+                    <p class="signature">
+                        With lots of love ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="main-button"
+                    onclick="finalSurprise()">
+
+                Open the Final Surprise 🎉
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SCREEN 8 : FINAL
+        ================================================== -->
+
+        <section class="screen final-screen"
+                 id="screen8">
+
+            <div id="confetti"></div>
+
+            <div class="final-content">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <div class="small-label">
+                    THIS IS FOR YOU
+                </div>
+
+                <h1>
+
+                    Happy Birthday,
+                    <span class="gradient-text">
+                        Bangaram
+                    </span>
+
+                </h1>
+
+                <p class="final-message">
+
+                    May your smile stay bright,
+                    your heart stay happy,
+                    and your dreams become reality.
+
+                </p>
+
+                <div class="final-line"></div>
+
+                <p class="final-small">
+                    Made with ❤️ just for you.
+                </p>
+
+                <button class="replay-button"
+                        onclick="restartExperience()">
+
+                    ↻ Replay
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         TOUCH RIPPLE
+    ====================================================== -->
+
+    <div id="cursorGlow"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
